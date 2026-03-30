@@ -64,7 +64,7 @@ Turnos generados por los clientes con código auto-incremental diario, estados d
 ### Prerrequisitos
 
 - Node.js 18+
-- MongoDB (local o Atlas)
+- MongoDB (local o Atlas) — debe estar corriendo antes de ejecutar el seed y la app
 
 ### Pasos
 
@@ -86,14 +86,31 @@ NEXTAUTH_SECRET=una-clave-secreta-segura
 NEXTAUTH_URL=http://localhost:3000
 ```
 
-4. Iniciar el servidor de desarrollo:
+4. Cargar los usuarios de prueba:
+```bash
+npm run seed
+```
+
+5. Iniciar el servidor de desarrollo:
 ```bash
 npm run dev
 ```
 
-5. Abrir [http://localhost:3000](http://localhost:3000)
+6. Abrir [http://localhost:3000](http://localhost:3000)
+
+### Usuarios de Prueba
+
+Al ejecutar `npm run seed` se crean 3 usuarios para probar cada rol:
+
+| Rol | Email | Contraseña |
+|-----|-------|------------|
+| **Admin** | admin@gmail.com | test123 |
+| **Operador** | operador@gmail.com | test123 |
+| **Cliente** | cliente@gmail.com | test123 |
 
 ### Primer uso
+
+Si se parte desde una base de datos vacía:
 
 1. Registrar un usuario desde `/register`
 2. Para crear el primer admin, cambiar el rol directamente en MongoDB:
