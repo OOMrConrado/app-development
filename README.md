@@ -108,6 +108,11 @@ Al ejecutar `npm run seed` se crean 3 usuarios para probar cada rol:
 | **Operador** | operador@gmail.com | test123 |
 | **Cliente** | cliente@gmail.com | test123 |
 
+Para cargar estos usuarios en la base de datos:
+```bash
+npm run seed
+```
+
 ### Primer uso
 
 Si se parte desde una base de datos vacía:
